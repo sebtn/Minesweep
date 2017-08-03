@@ -40,10 +40,11 @@ Cell.prototype.countBees = function() {
     return -1
   }
   var total = 0
+  // traverses the entire grid with
+  // xoffest and yoffser to account for things 
+  // only inside the grid
   for (var xoff = -1; xoff <= 1; xoff++) {
     for (var yoff = -1; yoff <= 1; yoff++) {
-      // xoffest and yoffser to account for things 
-      // only inside the grid
       var i = this.i + xoff
       var j = this.j + yoff
       if(i > -1 && i < cols && j > -1 && j < rows) {
@@ -70,6 +71,7 @@ Cell.prototype.reveal = function() {
   }
 }
 
+/*-------------------------------------------------------*/
 Cell.prototype.floddFill = function () {
   // Counting neighbors inside the grid
   for (var xoff = -1; xoff <= 1; xoff++) {

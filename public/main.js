@@ -41,6 +41,7 @@ function setup() {
     var i = choice[0]
     var j = choice[1]
     // splice deletes the spot from options
+    // so no bee spot is repeated
     options.splice(index, 1) 
     grid[i][j].bee = true
   }
