@@ -54,6 +54,15 @@ function setup() {
 }
 
 /*-------------------------------------------------------*/
+function gameOver() {
+  for (var i = 0; i < cols; i++) {
+    for (var j = 0; j < rows; j++) {
+      grid[i][j].revealed = true    
+    }
+  }
+}
+
+/*-------------------------------------------------------*/
 function draw() {
   background(255)
   for (var i = 0; i < cols; i++) {
@@ -71,6 +80,9 @@ function mousePressed() {
       // Check every spot for mouse spot reveal on click
       if ( grid[i][j].contains(mouseX, mouseY) ) {
         grid[i][j].reveal()
+        if (grid[i][j].bee) { 
+          gameOver() 
+        }
       }
     }
   }
