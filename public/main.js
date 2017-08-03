@@ -19,7 +19,13 @@ function setup() {
   for (var i = 0; i < cols; i++) {
     for (var j = 0; j < rows; j++) {
       // initialize grid using cells
-      grid[i][j] = new Cell(i*w, j*w, w)
+      grid[i][j] = new Cell(i,j, w)
+    }
+  }
+  // count neighbors
+  for (var i = 0; i < cols; i++) {
+    for (var j = 0; j < rows; j++) {
+      grid[i][j].countBees()
     }
   }
 }
